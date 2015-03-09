@@ -2,3 +2,4 @@ node_modules
 .idea
 vendor
 npm-debug.log
+tmp
