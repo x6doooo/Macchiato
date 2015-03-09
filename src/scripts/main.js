@@ -1,14 +1,11 @@
 /**
- * Created by dx.yang on 15/3/7.
+ * Created by dx.yang on 15/3/8.
  */
 
-/**
- * requrie main entrance
- * @Created by meng.limeng on 2014/01/02.
- */
 ;(function(){
     var vendorPath	= '../../vendor';
-    require.config({
+
+    var config = {
         baseUrl: 'scripts/',
         paths: {
             'angular':          vendorPath + '/angular/angular',
@@ -46,7 +43,13 @@
                 deps: ['angular']
             }
         }
-    });
+    };
 
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = config;
+    } else {
+        require.config(config);
+    }
 }());
 

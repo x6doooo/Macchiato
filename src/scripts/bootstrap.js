@@ -1,11 +1,7 @@
 /**
- * Created by dx.yang on 15/3/7.
+ * Created by dx.yang on 15/3/8.
  */
 
-/**
- * 启动入口
- * @Created by meng.limeng on 2014/01/02.
- */
 define([
     'angular',
     'app'//,
@@ -16,11 +12,8 @@ define([
     //'controllers/_base',
     //'filters/_base',
     //'services/_base'
-], function(angular){'use strict';
-
+], function(angular){
     angular.element(document).ready(function(){
         angular.bootstrap(document, ['macchiato']);
     });
-
 });
-

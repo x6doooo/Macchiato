@@ -8,7 +8,6 @@ define([
     'ui.bootstrap',
     'angular-sanitize'
 ], function(angular){
-    'use strict';
     return angular.module('macchiato', [
         'ui.router',
         'ui.bootstrap',

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{%.title%}{%.env%}</title>
+    <meta name="description" content="{%.description%}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!--[if lt IE 9]>
+    <script>
+        window.location.href = '/oldie';
+        if (!window.console) {
+            console = {
+                log: function(info) {
+                    return false;
+                }
+            };
+        }
+    </script>
+    <![endif]-->
+
+    <script>
+        var GLOBAL_SETTING = {
+
+        };
+    </script>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css">
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/all.css -->
+    <link rel="stylesheet" href="styles/all.css">
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script data-main="scripts/main"
+            src="vendor/requirejs/require.js"></script>
+
+    <!--<script src="macchiato.js"></script>-->
+
+    <script>
+        require(['bootstrap'],function(bootstrap){});
+    </script>
+</head>
+<body>
+<div ng-include=""></div>
+</body>
+</html>
