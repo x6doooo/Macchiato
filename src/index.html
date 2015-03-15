@@ -22,7 +22,6 @@
 
     <script>
         var GLOBAL_SETTING = {
-
         };
     </script>
 
@@ -30,26 +29,46 @@
 
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css styles/all.css -->
-    <link rel="stylesheet" href="styles/all.css">
+    <!-- build:css styles/macchiato.css -->
+    <link rel="stylesheet" href="styles/macchiato.css">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script data-main="scripts/main"
-            src="vendor/requirejs/require.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-    <script src="scripts/macchiato.js"></script>
 
-    <script>
-        require(['bootstrap'],function(bootstrap){});
-    </script>
+    <!-- build:js scripts/macchiato.js -->
+    <!-- bower:js -->
+    <script src="scripts/module.js"></script>
+    <script src="scripts/services/ip.service.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/demo.js -->
+    <!-- bower:js -->
+    <script src="demo/demo.js"></script>
+    <script src="demo/controllers/index.ctrl.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
 </head>
-<body>
-<div ng-include=""></div>
+<body ng-app="demo">
+<div ng-include="'demo/view/index.html'"></div>
+<script>
+</script>
 </body>
 </html>
