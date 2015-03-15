@@ -9,13 +9,68 @@ var $ = require('gulp-load-plugins')({
 });
 
 
-gulp.task('html:dev', function() {})
+gulp.task('html:dev', function() {
+    return gulp.src('src/**/*.html')
+        .pipe(gulp.dest('.tmp'))
+});
+
+gulp.task('scripts:dev', function() {
+    return gulp.src('src/**/*.js')
+        .pipe(gulp.dest('.tmp'))
+});
+
+gulp.task('styles:dev', function() {
+    return $.rubySass('src/styles', {
+        sourcemap:true
+    })
+        .on('error', function (err) { console.log(err.message); })
+        .pipe($.sourcemaps.write('.', {
+            includeContent:false,
+            sourceRoot:'../../src/styles'
+        }))
+        .pipe(gulp.dest('.tmp/styles'));
+});
+
+gulp.task('watch:dev', function() {
+    gulp.watch('src/**/*.html', ['html:dev']);
+    gulp.watch(['src/styles/**/*.sass', 'src/styles/**/*.scss'], ['styles:dev']);
+    gulp.watch(['src/scripts/**/*.js'], ['scripts:dev']);
+});
+
+gulp.task('open:dev', function() {
+    return gulp.src('.tmp/index.html')
+        .pipe($.open('', {
+            url: 'http://localhost:9527',
+            app: 'google chrome'
+        }));
+});
+
+gulp.task('vendor:dev', function() {
+    return gulp.src('vendor/**/*')
+        .pipe(gulp.dest('.tmp/vendor'))
+})
+
+gulp.task('serve:dev', [
+    'html:dev', 'styles:dev', 'scripts:dev',
+    'vendor:dev'
+], function() {
+    gulp.start('watch:dev');
+    $.connect.server({
+        port: 9527,
+        root: '.tmp',
+        livereload: true,
+        middleware: function(connect) {
+            return [
+                require('./server/devServer')('.tmp')
+            ];
+        }
+
+    });
+    gulp.start('open:dev')
+});
 
 
-
-
-
-
+/////////////////////////////////////////////////////
 
 
 gulp.task('scripts', function () {

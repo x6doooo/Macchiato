@@ -4,4 +4,8 @@
 
 
 angular.module('macchiato', [
-]);
+    'chieffancypants.loadingBar',
+    'ngAnimate'
+]).config(function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = true;
+});
