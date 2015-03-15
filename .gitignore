@@ -2,6 +2,6 @@ node_modules
 .idea
 vendor
 npm-debug.log
-tmp
-
+.tmp
+.sass-cache
 gulpfile-bk.js
