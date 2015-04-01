@@ -1,7 +1,5 @@
-node_modules
-.idea
-vendor
-npm-debug.log
-.tmp
-.sass-cache
-gulpfile-bk.js
+node_modules/
+bower_components/
+.sass-cache/
+.tmp/
+dist/
