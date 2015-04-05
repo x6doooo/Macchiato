@@ -5,9 +5,9 @@
 angular.module('macchiato')
     .directive('maccNavbar', function() {
         return {
-            restrict: 'E',
+            restrict: 'A',
+            transclude: true,
             scope: {
-                list: '='
             },
             templateUrl: 'components/navbar/navbar.html'
         }

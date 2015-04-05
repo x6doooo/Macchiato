@@ -1,11 +1,14 @@
 angular.module('macchiato')
-    .controller('NavbarCtrl', [
+    .controller('macchiato.NavbarCtrl', [
         '$scope',
         '$location',
+        'macchiato.mainNavList',
         function (
             $scope,
-            $location
+            $location,
+            mainNavList
         ) {
+            $scope.list = mainNavList;
             function changeTab() {
                 var p = $location.path();
                 if (!p) {
