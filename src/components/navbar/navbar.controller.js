@@ -18,7 +18,6 @@ angular.module('macchiato')
                 $scope.currentTab = p;
             }
 
-            //$scope.version = '1.0';
             $scope.$on('$routeChangeStart', function () {
                 changeTab();
             });

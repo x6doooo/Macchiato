@@ -5,10 +5,12 @@
 angular.module('macchiato')
     .directive('maccNavbar', function() {
         return {
-            restrict: 'A',
-            transclude: true,
+            restrict: 'E',
+            replace: true,
+            //transclude: true,
             scope: {
             },
-            templateUrl: 'components/navbar/navbar.html'
+            templateUrl: 'components/navbar/navbar.html',
+            controller: 'macchiato.NavbarCtrl'
         }
     });

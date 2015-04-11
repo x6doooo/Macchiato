@@ -6,10 +6,11 @@
 angular.module('macchiato')
     .directive('maccSiderNav', function() {
         return {
-            restrict: 'A',
+            restrict: 'E',
             scope: {
                 list: '=list'
             },
-            templateUrl: 'components/siderNav/siderNav.html'
+            templateUrl: 'components/siderNav/siderNav.html',
+            controller: 'macchiato.SiderNavCtrl'
         }
     });

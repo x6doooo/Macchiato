@@ -6,21 +6,15 @@ angular.module('macchiato')
     .controller('macchiato.SiderNavCtrl', [
         '$scope',
         '$location',
+        '$routeParams',
         function(
             $scope,
-            $location
+            $location,
+            $routeParams
         ) {
-
             function changeTab() {
-                var p = $location.path();
-                if (!p) {
-                    return;
-                }
-                p = p.match(/^\/([^/]+)\/([^/]+)/);
-                //console.log(p)
-                $scope.currentTab = p[2];
+                $scope.currentTab = $routeParams.which;
             }
-
             $scope.$on('$routeChangeStart', function () {
                 changeTab();
             });

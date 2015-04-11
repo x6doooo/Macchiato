@@ -1,10 +1,10 @@
 //
    Created by yangdongxu on 15/4/4.
-div.macc-sider-nav(ng-controller="macchiato.SiderNavCtrl")
+.macc-sider-nav
     ul.nav-list
         li(ng-repeat="item in list",ng-class="{true:'active'}[item.key==currentTab]")
             a(href="{{item.url}}")
                 i.pull-left(class="{{item.icon}}")
-                span.pull-left{{item.title}}
+                span.pull-left {{item.title}}
                 i.fa.fa-angle-right.pull-right
 
